@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "codex-chatgpt-control": "0.5.1-alpha.1"
+  },
+  "scripts": {
+    "test:browser-leases": "npm --prefix packages/browser-leases test",
+    "typecheck:browser-leases": "npm --prefix packages/browser-leases run typecheck",
+    "build:browser-leases": "npm --prefix packages/browser-leases run build"
+  }
+}
