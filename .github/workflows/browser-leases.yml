@@ -1,0 +1,30 @@
+name: Browser lease contracts
+
+on:
+  push:
+    paths:
+      - "packages/browser-leases/**"
+      - ".github/workflows/browser-leases.yml"
+  pull_request:
+    paths:
+      - "packages/browser-leases/**"
+      - ".github/workflows/browser-leases.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/browser-leases
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --ignore-scripts --no-audit --no-fund
+      - run: npm test
+      - run: npm run typecheck
+      - run: npm run build
