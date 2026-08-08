@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "codexChatgptWeb": {
+    "repository": "miuuyy/codex-chatgpt-web",
+    "commit": "8ae34eb598b0973890ee743cde915be64b9297ca"
+  },
+  "codexChatgptControl": {
+    "repository": "adamallcock/codex-chatgpt-control",
+    "commit": "73c5737f222709e324a1c7ba1637cef9966000ce",
+    "packageVersion": "0.5.1-alpha.1"
+  }
+}

@@ -1,0 +1,19 @@
+codex-chatgpt-web-control
+
+This bootstrap overlay is intended to be applied to a repository derived from
+miuuyy/codex-chatgpt-web and using adamallcock/codex-chatgpt-control.
+
+Upstream project: codex-chatgpt-web
+Copyright (c) 2026 codex-chatgpt-web contributors
+Licensed under the MIT License.
+Source revision: 8ae34eb598b0973890ee743cde915be64b9297ca
+
+Upstream project: codex-chatgpt-control
+Copyright (c) 2026 Adam Allcock
+Licensed under the MIT License.
+Source revision: 73c5737f222709e324a1c7ba1637cef9966000ce
+Package version: 0.5.1-alpha.1
+
+The complete MIT licence text from each upstream must remain available in the
+final repository and release packages. This NOTICE supplements, and does not
+replace, those licence files.
