@@ -1,0 +1,29 @@
+{
+  "name": "@codex-chatgpt-web-control/browser-leases",
+  "version": "0.1.0-alpha.0",
+  "private": true,
+  "description": "Pure surface lease contracts and manager for the shared ChatGPT browser host.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "devDependencies": {
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=22.6"
+  }
+}

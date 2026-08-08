@@ -1,0 +1,6 @@
+node_modules/
+dist/
+*.tgz
+test-results.txt
+dist-smoke.json
+npm-pack-dry-run.json
