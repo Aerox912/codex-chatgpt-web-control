@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="860" viewBox="0 0 1500 860" role="img" aria-labelledby="title desc">
+  <title id="title">Shared Browser and Account Scheduler</title>
+  <desc id="desc">Priority, cooldown, page-capacity, generation-capacity, execution, remote-work accounting, and release decisions shared by Web-model and visible-control operations.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#5e6c84"/></marker>
+    <style>
+      .title{font:700 30px Inter,Segoe UI,Arial,sans-serif;fill:#172b4d}.subtitle{font:400 16px Inter,Segoe UI,Arial,sans-serif;fill:#5e6c84}.head{font:700 18px Inter,Segoe UI,Arial,sans-serif;fill:#172b4d}.label{font:600 15px Inter,Segoe UI,Arial,sans-serif;fill:#172b4d}.small{font:500 13px Inter,Segoe UI,Arial,sans-serif;fill:#42526e}.edge{fill:none;stroke:#5e6c84;stroke-width:2.5;marker-end:url(#arrow)}.soft{fill:none;stroke:#7a869a;stroke-width:2;stroke-dasharray:7 6;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1500" height="860" rx="24" fill="#f7f8fa"/>
+  <text x="750" y="56" text-anchor="middle" class="title">Shared Browser and Account Scheduler</text>
+  <text x="750" y="86" text-anchor="middle" class="subtitle">One scheduler coordinates both engines, one ChatGPT account, five pages, remote Work activity, and uncertain submissions.</text>
+
+  <g transform="translate(45 130)">
+    <rect x="0" y="0" width="285" height="610" rx="20" fill="#ffffff" stroke="#dfe1e6" stroke-width="2"/>
+    <text x="142.5" y="38" text-anchor="middle" class="head">1. Classify and prioritize</text>
+
+    <rect x="35" y="75" width="215" height="62" rx="13" fill="#deebff" stroke="#0052cc"/><text x="142.5" y="102" text-anchor="middle" class="label">Priority 100 / 90</text><text x="142.5" y="122" text-anchor="middle" class="small">Model continuation / tool result</text>
+    <rect x="35" y="165" width="215" height="62" rx="13" fill="#e3fcef" stroke="#00875a"/><text x="142.5" y="192" text-anchor="middle" class="label">Priority 80 / 70</text><text x="142.5" y="212" text-anchor="middle" class="small">Control submit / Work steer</text>
+    <rect x="35" y="255" width="215" height="62" rx="13" fill="#eae6ff" stroke="#6554c0"/><text x="142.5" y="282" text-anchor="middle" class="label">Priority 50</text><text x="142.5" y="302" text-anchor="middle" class="small">Status and response read</text>
+    <rect x="35" y="345" width="215" height="62" rx="13" fill="#f4f5f7" stroke="#7a869a"/><text x="142.5" y="372" text-anchor="middle" class="label">Priority 20 / 10</text><text x="142.5" y="392" text-anchor="middle" class="small">Maintenance / smoke test</text>
+
+    <rect x="35" y="455" width="215" height="90" rx="13" fill="#ddf4ff" stroke="#0969da" stroke-width="2"/><text x="142.5" y="488" text-anchor="middle" class="label">Ordered shared queue</text><text x="142.5" y="511" text-anchor="middle" class="small">No per-engine quota bypass</text><text x="142.5" y="532" text-anchor="middle" class="small">No reflexive busy polling</text>
+
+    <path d="M142.5 137 V165" class="edge"/><path d="M142.5 227 V255" class="edge"/><path d="M142.5 317 V345" class="edge"/><path d="M142.5 407 V455" class="edge"/>
+  </g>
+
+  <g transform="translate(380 130)">
+    <rect x="0" y="0" width="430" height="610" rx="20" fill="#ffffff" stroke="#dfe1e6" stroke-width="2"/>
+    <text x="215" y="38" text-anchor="middle" class="head">2. Gate shared account capacity</text>
+
+    <path d="M215 72 L335 132 L215 192 L95 132 Z" fill="#fff0b3" stroke="#ff8b00" stroke-width="2"/><text x="215" y="127" text-anchor="middle" class="label">Account cooldown?</text><text x="215" y="148" text-anchor="middle" class="small">429 or visible rate limit</text>
+
+    <rect x="20" y="230" width="170" height="75" rx="13" fill="#ffebe9" stroke="#cf222e"/><text x="105" y="259" text-anchor="middle" class="label">Hold submission</text><text x="105" y="281" text-anchor="middle" class="small">Never resubmit uncertain work</text>
+    <rect x="240" y="230" width="170" height="75" rx="13" fill="#e3fcef" stroke="#00875a"/><text x="325" y="259" text-anchor="middle" class="label">Allow safe read</text><text x="325" y="281" text-anchor="middle" class="small">Status / response capture</text>
+
+    <path d="M215 350 L330 405 L215 460 L100 405 Z" fill="#deebff" stroke="#0052cc" stroke-width="2"/><text x="215" y="400" text-anchor="middle" class="label">Active surfaces &lt; 5?</text><text x="215" y="421" text-anchor="middle" class="small">Global hard page cap</text>
+    <rect x="20" y="495" width="170" height="72" rx="13" fill="#ffebe9" stroke="#cf222e"/><text x="105" y="524" text-anchor="middle" class="label">Wait for page slot</text><text x="105" y="546" text-anchor="middle" class="small">Preserve queue priority</text>
+    <rect x="240" y="495" width="170" height="72" rx="13" fill="#ddf4ff" stroke="#0969da"/><text x="325" y="524" text-anchor="middle" class="label">Check generation cap</text><text x="325" y="546" text-anchor="middle" class="small">3 total / 2 control / 1 reserved</text>
+
+    <path d="M155 171 L105 230" class="edge"/><text x="102" y="201" text-anchor="middle" class="small">submission</text>
+    <path d="M275 171 L325 230" class="edge"/><text x="326" y="201" text-anchor="middle" class="small">safe read</text>
+    <path d="M325 305 C325 326 280 340 245 365" class="edge"/>
+    <path d="M105 305 C105 331 145 350 185 370" class="soft"/>
+    <path d="M160 438 L105 495" class="edge"/><text x="118" y="470" text-anchor="middle" class="small">no</text>
+    <path d="M270 438 L325 495" class="edge"/><text x="314" y="470" text-anchor="middle" class="small">yes</text>
+  </g>
+
+  <g transform="translate(860 130)">
+    <rect x="0" y="0" width="595" height="610" rx="20" fill="#ffffff" stroke="#dfe1e6" stroke-width="2"/>
+    <text x="297.5" y="38" text-anchor="middle" class="head">3. Execute on one exact leased page</text>
+
+    <path d="M150 82 L260 132 L150 182 L40 132 Z" fill="#eae6ff" stroke="#6554c0" stroke-width="2"/><text x="150" y="127" text-anchor="middle" class="label">Generation slot free?</text><text x="150" y="148" text-anchor="middle" class="small">Includes remote Work activity</text>
+    <rect x="22" y="225" width="180" height="76" rx="13" fill="#ffebe9" stroke="#cf222e"/><text x="112" y="254" text-anchor="middle" class="label">Wait for generation</text><text x="112" y="276" text-anchor="middle" class="small">No hidden task fan-out</text>
+    <rect x="248" y="100" width="305" height="92" rx="15" fill="#ddf4ff" stroke="#0969da" stroke-width="2"/><text x="400.5" y="132" text-anchor="middle" class="label">Allocate exclusive host lease</text><text x="400.5" y="154" text-anchor="middle" class="small">Exact surface + owner proof</text><text x="400.5" y="175" text-anchor="middle" class="small">Operation-scoped upload/download paths</text>
+
+    <rect x="248" y="245" width="305" height="90" rx="15" fill="#deebff" stroke="#0052cc" stroke-width="2"/><text x="400.5" y="278" text-anchor="middle" class="label">Run on owned page</text><text x="400.5" y="301" text-anchor="middle" class="small">Per-surface mutex and verified tab affinity</text><text x="400.5" y="322" text-anchor="middle" class="small">Cancellation affects one lease only</text>
+
+    <path d="M400.5 378 L520 430 L400.5 482 L281 430 Z" fill="#fff0b3" stroke="#ff8b00" stroke-width="2"/><text x="400.5" y="425" text-anchor="middle" class="label">Remote Work still running?</text><text x="400.5" y="446" text-anchor="middle" class="small">Page may already be closed</text>
+    <rect x="42" y="505" width="225" height="72" rx="13" fill="#eae6ff" stroke="#6554c0"/><text x="154.5" y="534" text-anchor="middle" class="label">Retain remote reservation</text><text x="154.5" y="556" text-anchor="middle" class="small">Until a status check proves terminal</text>
+    <rect x="326" y="505" width="225" height="72" rx="13" fill="#e3fcef" stroke="#00875a"/><text x="438.5" y="534" text-anchor="middle" class="label">Release capacity</text><text x="438.5" y="556" text-anchor="middle" class="small">Close exact page and lease</text>
+
+    <path d="M210 132 H248" class="edge"/><text x="228" y="120" text-anchor="middle" class="small">yes</text>
+    <path d="M115 176 L112 225" class="edge"/><text x="91" y="204" text-anchor="middle" class="small">no</text>
+    <path d="M400.5 192 V245" class="edge"/>
+    <path d="M400.5 335 V378" class="edge"/>
+    <path d="M340 468 L225 505" class="edge"/><text x="279" y="493" text-anchor="middle" class="small">yes</text>
+    <path d="M450 468 L438.5 505" class="edge"/><text x="467" y="493" text-anchor="middle" class="small">no</text>
+    <path d="M267 541 H326" class="soft"/>
+  </g>
+
+  <path d="M330 630 C350 630 350 630 380 630" class="edge"/>
+  <path d="M790 661 C825 661 825 276 860 276" class="edge"/>
+  <text x="825" y="455" text-anchor="middle" class="small" transform="rotate(-90 825 455)">eligible operation</text>
+
+  <g transform="translate(45 780)">
+    <rect width="1410" height="48" rx="12" fill="#ffffff" stroke="#dfe1e6"/>
+    <text x="705" y="30" text-anchor="middle" class="small">Global-exclusive login, logout, storage repair, connector configuration, and smoke tests require all local surfaces and tracked remote activity to be idle.</text>
+  </g>
+</svg>
