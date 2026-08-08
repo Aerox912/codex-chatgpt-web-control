@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">Exclusive Surface Lease Lifecycle</title>
+  <desc id="desc">Principal browser surface lease states, recovery paths, and the required releasing to released terminal transition.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#5e6c84"/></marker>
+    <marker id="blueArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#0052cc"/></marker>
+    <style>
+      .title{font:700 30px Inter,Segoe UI,Arial,sans-serif;fill:#172b4d}.subtitle{font:400 16px Inter,Segoe UI,Arial,sans-serif;fill:#5e6c84}.label{font:600 17px Inter,Segoe UI,Arial,sans-serif;fill:#172b4d}.small{font:500 14px Inter,Segoe UI,Arial,sans-serif;fill:#42526e}.flow{fill:none;stroke:#5e6c84;stroke-width:3;marker-end:url(#arrow)}.terminal{fill:none;stroke:#0052cc;stroke-width:4;marker-end:url(#blueArrow)}.dashed{fill:none;stroke:#7a869a;stroke-width:2.5;stroke-dasharray:8 7;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1400" height="760" rx="24" fill="#f7f8fa"/>
+  <text x="700" y="58" text-anchor="middle" class="title">Exclusive Surface Lease Lifecycle</text>
+  <text x="700" y="88" text-anchor="middle" class="subtitle">Every mutation revalidates the exact lease and owner tuple; released is reachable only through releasing.</text>
+
+  <g transform="translate(55 155)">
+    <rect x="0" y="0" width="150" height="70" rx="14" fill="#deebff" stroke="#0052cc" stroke-width="2"/><text x="75" y="42" text-anchor="middle" class="label">Allocating</text>
+    <rect x="205" y="0" width="150" height="70" rx="14" fill="#fff0b3" stroke="#ff8b00" stroke-width="2"/><text x="280" y="42" text-anchor="middle" class="label">Navigating</text>
+    <rect x="410" y="0" width="150" height="70" rx="14" fill="#fff0b3" stroke="#ff8b00" stroke-width="2"/><text x="485" y="42" text-anchor="middle" class="label">Submitting</text>
+    <rect x="615" y="0" width="150" height="70" rx="14" fill="#eae6ff" stroke="#6554c0" stroke-width="2"/><text x="690" y="42" text-anchor="middle" class="label">Generating</text>
+    <rect x="820" y="0" width="150" height="70" rx="14" fill="#e3fcef" stroke="#00875a" stroke-width="2"/><text x="895" y="42" text-anchor="middle" class="label">Ready</text>
+    <rect x="1025" y="0" width="150" height="70" rx="14" fill="#deebff" stroke="#0052cc" stroke-width="2"/><text x="1100" y="42" text-anchor="middle" class="label">Releasing</text>
+    <rect x="1230" y="0" width="115" height="70" rx="35" fill="#f4f5f7" stroke="#5e6c84" stroke-width="3"/><text x="1287.5" y="42" text-anchor="middle" class="label">Released</text>
+
+    <path d="M150 35 H205" class="flow"/><path d="M355 35 H410" class="flow"/><path d="M560 35 H615" class="flow"/><path d="M765 35 H820" class="flow"/><path d="M970 35 H1025" class="flow"/><path d="M1175 35 H1230" class="terminal"/>
+
+    <rect x="205" y="170" width="150" height="70" rx="14" fill="#e3fcef" stroke="#00875a" stroke-width="2"/><text x="280" y="212" text-anchor="middle" class="label">Idle</text>
+    <path d="M75 70 C75 205 130 205 205 205" class="flow"/>
+    <path d="M355 205 C400 205 405 70 410 35" class="flow"/>
+    <path d="M895 70 C895 205 560 205 355 205" class="flow"/>
+    <text x="535" y="232" text-anchor="middle" class="small">Reusable control surface path</text>
+
+    <rect x="515" y="340" width="160" height="70" rx="14" fill="#fffae6" stroke="#ffab00" stroke-width="2"/><text x="595" y="382" text-anchor="middle" class="label">Blocked</text>
+    <rect x="735" y="340" width="150" height="70" rx="14" fill="#ffebe6" stroke="#de350b" stroke-width="2"/><text x="810" y="382" text-anchor="middle" class="label">Error</text>
+    <text x="700" y="455" text-anchor="middle" class="small">Authentication, permission, rate-limit, selector-drift, or ownership failures remain explicit.</text>
+
+    <path d="M280 240 C280 330 430 375 515 375" class="dashed"/>
+    <path d="M485 70 C485 245 525 295 570 340" class="dashed"/>
+    <path d="M690 70 C690 235 650 290 620 340" class="dashed"/>
+    <path d="M895 70 C895 230 720 300 650 340" class="dashed"/>
+    <path d="M675 375 H735" class="flow"/>
+    <path d="M595 340 C595 260 700 215 820 205" class="flow"/>
+    <path d="M810 340 C900 285 1000 250 1100 70" class="dashed"/>
+
+    <path d="M75 70 C75 560 925 560 1100 70" class="dashed"/>
+    <path d="M280 240 C280 535 920 535 1100 70" class="dashed"/>
+    <path d="M595 410 C700 510 995 470 1100 70" class="dashed"/>
+    <text x="1085" y="515" text-anchor="end" class="small">Any active or failed state may release its exact lease.</text>
+  </g>
+
+  <g transform="translate(55 690)">
+    <rect width="1290" height="44" rx="12" fill="#ffffff" stroke="#dfe1e6"/>
+    <text x="645" y="28" text-anchor="middle" class="small">Host invariant: URL and title are diagnostics only — ownership is proven by leaseId, surfaceId, owner PID, and owner instance ID.</text>
+  </g>
+</svg>
