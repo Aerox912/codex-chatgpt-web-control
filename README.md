@@ -25,9 +25,16 @@ is complete and validated locally:
 - JavaScript and declaration build passes;
 - built-package smoke and npm package dry run pass.
 
-See [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md),
-[docs/control-architecture.md](docs/control-architecture.md), and the
-[Linear project](https://linear.app/aerox912/project/codex-chatgpt-web-control-0c9cc0e4a337).
+See:
+
+- [Implementation status](IMPLEMENTATION_STATUS.md)
+- [Shared-browser control architecture](docs/control-architecture.md)
+- [Editable architecture diagrams](docs/architecture-diagrams.md)
+- [Linear project](https://linear.app/aerox912/project/codex-chatgpt-web-control-0c9cc0e4a337)
+
+The diagram set covers the runtime topology, surface-lease lifecycle,
+concurrent Web/control execution, shared scheduler, durable Chat/Work identity,
+and the Linear delivery dependency graph.
 
 ## Upstreams
 
